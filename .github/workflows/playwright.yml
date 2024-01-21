@@ -20,4 +20,4 @@ jobs:
           echo "Run playwright test"
           npm run test:ci
         env:
-          ADMIN_PASSWORD: Admin123
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
