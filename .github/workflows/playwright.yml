@@ -9,5 +9,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Say hello
-        run: echo Hello
+      - name: Run tests
+        run: |
+          echo "Start the shopping store app"
+          ./shopping-store-linux-amd64 & 
+          echo "Install depeendencies from lockfile"
+          npm ci
+          echo "Run playwright test"
+          npm run test:ci
