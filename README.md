@@ -2,7 +2,7 @@
 
 ## To start the testing app:
 
-### run in the terminal:
+### run:
 
 `./shopping-store-mac-arm64`
 
