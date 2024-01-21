@@ -1,21 +1,23 @@
 name: Playwright Tests
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
     # whenever ther is a push to main branch - run tests
 jobs:
   playwrighttests:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.41.0-jammy
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run tests
         run: |
-          echo "Start the shopping store app"
           chmod +x ./shopping-store-linux-amd64
           ./shopping-store-linux-amd64 & 
-          echo "Install depeendencies from lockfile"
           npm ci
           npx playwright install
           echo "Run playwright test"
           npm run test:ci
+        env:
+          ADMIN_PASSWORD: Admin123
