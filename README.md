@@ -8,9 +8,11 @@
 
 ## Playwright
 
-### Inside that directory, you can run several commands:
+## Inside that directory, you can run several commands:
 
-`npm i -D @playwright/test`
+### install all packages
+
+`yarn`
 
 ### install supported browsers
 
@@ -38,4 +40,4 @@
 
 ### Open the UI mode.
 
-`playwright test --ui`
+`yarn playwright test --ui`
